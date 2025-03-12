@@ -5,7 +5,7 @@ import Projects from "@/components/main/Projects";
 import Skills from "@/components/main/Skills";
 //import Image from "next/image";
 import {useTranslations} from 'next-intl';
-export default function Home({locale}:{ locale: string }) { setRequestLocale(locale);  
+export default function Home({locale}:{ locale: any }) { setRequestLocale(locale);  
       const t = useTranslations('Home');
   return ( 
     <main className="h-full w-full">
