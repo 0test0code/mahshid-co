@@ -42,3 +42,4 @@ export async function POST(request: Request) {
     return Response.json({ message: error.message }, { status: 400 });
   }
 }
+export const runtime = 'edge';

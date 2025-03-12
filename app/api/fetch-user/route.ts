@@ -40,3 +40,4 @@ export async function GET(request: Request) {   //Connect to Database
 
   
 }
+export const runtime = 'edge';
