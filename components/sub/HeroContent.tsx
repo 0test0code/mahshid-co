@@ -9,11 +9,8 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import { getLocale } from "next-intl/server";
 
-
-
-const HeroContent = ( {direction}:string) => { const t = useTranslations('HeroContent');
+const HeroContent = ( ) => { const t = useTranslations('HeroContent');
   
   return (
     <motion.div
@@ -55,7 +52,7 @@ const HeroContent = ( {direction}:string) => { const t = useTranslations('HeroCo
         </motion.p>
         <motion.a
           variants={slideInFromLeft(1)}
-          className={`py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] {direction === 'rtl' ? font-blotus} text-xl`}
+          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           {t('Learn')}
         </motion.a>

@@ -1,9 +1,9 @@
 import React from "react";
 import HeroContent from "../sub/HeroContent";
-import { getLocale } from "next-intl/server";
-import {getLangDir} from 'rtl-detect';
 
-const Hero = () => {const locale =  getLocale();  const direction :string = getLangDir(locale).toString();
+
+
+const Hero = () => {  
   return ( 
     <div className="relative flex flex-col h-full w-full" id="about-me">
       <video
@@ -14,7 +14,7 @@ const Hero = () => {const locale =  getLocale();  const direction :string = getL
       >
         <source src="/blackhole.webm" type="video/webm" />
       </video>
-      <HeroContent direction={direction} />
+      <HeroContent />
     </div>
   );
 };
