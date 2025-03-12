@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
+import createNextIntlPlugin from 'next-intl/plugin';
+const withNextIntl = createNextIntlPlugin();
 
-export default nextConfig;
+const nextConfig = {};
+if (process.env.NODE_ENV === 'development') {
+    await setupDevPlatform();
+  }
+ 
+export default withNextIntl(nextConfig);
