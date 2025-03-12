@@ -1,6 +1,6 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+  "compilerOptions": {"baseUrl": "./",
+     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,7 +17,9 @@
         "name": "next"
       }
     ],
-    "paths": {
+    "paths": {"crypto": [
+      "node_modules/crypto-js"
+    ],
       "@/*": ["./*"]
     }
   },
