@@ -16,7 +16,7 @@ const HeroContent = ( ) => { const t = useTranslations('HeroContent');
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-52 w-full z-[20] mr-2"
+      className={`flex flex-row items-center justify-center px-20 mt-52 w-full z-[20] mr-2 {t('font')}`}
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -31,7 +31,7 @@ const HeroContent = ( ) => { const t = useTranslations('HeroContent');
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className={`flex flex-col gap-6 mt-6 text-5xl font-bold text-white max-w-[600px] w-auto h-auto mr-2 {direction === 'rtl' ? font-blotus} `}
+          className={`flex flex-col gap-6 mt-6 text-5xl font-bold text-white max-w-[600px] w-auto h-auto mr-2 {t('font')}`}
         >
           <span>
             {t('Providing')}

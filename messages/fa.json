@@ -50,10 +50,10 @@
       "Providing": "با ",
       "best":"به روزترین",
       "project":"ابزارها دیده شوید",
-      
+      "font":"font-blotus",
       "Learn":"بیشتر بدانید"
     },
-    "skillText":{"generation":"آسودگی بیشتر در کسب و کار با ابزارهای آنلاین"}
+    "skillText":{"generation":"آسودگی بیشتر در کسب و کار با ابزارهای آنلاین", "font":"font-blotus"}
     ,
     "Encryption":{
       "Performance":"کارایی،بازده",
