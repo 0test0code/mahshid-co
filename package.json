@@ -46,6 +46,7 @@
     "typescript": "^5"
   },
   "browser": {
-      "crypto": false
+      "crypto": false,
+      "stream": false
   }
 }
