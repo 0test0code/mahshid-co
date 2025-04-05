@@ -1,9 +1,10 @@
 import { connectDB } from "../config/db";
 import User from "../models/user.model";
 import bcryptjs from "bcryptjs";
-import { setCookie } from "@/app/Cookies/setCookie";
+
 import validateEmail from "@/app/helpers/validateEmail";
 import validatePassword from "@/app/helpers/validatePassword";
+import { setCookie } from "@/app/Cookies/setCookie";
 
 export async function POST(request: Request) { 
   // connect to database
@@ -37,8 +38,7 @@ export async function POST(request: Request) {
       email,
       password: hashedPassword,
     }); // Set Cookies 
-
-    await setCookie(user._id);
+          setCookie(user._id);
 
     return Response.json(
       {
@@ -53,4 +53,4 @@ export async function POST(request: Request) {
     return Response.json({ message: error.message }, { status: 400 });
   }
 }
-export const runtime = 'edge';
+

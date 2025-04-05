@@ -1,16 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
-@import url('http://fonts.googleapis.com/earlyaccess/scheherazade.css'); 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('http://fonts.googleapis.com/earlyaccess/scheherazade.css'); 
 
-@font-face { font-family: 'blotus';
-  src: local('blotus'),
-       url('./fonts/BLotus.woff') format('woff');
+@layer base {
+  @font-face {
+    font-family: blotus;
+    font-weight: 800;
+    src: url(./fonts/BLotus.woff) format("woff");
+  }
 }
-.Mountlogo{font-family: "Blotus";}
-.cursive {
-  font-family: "blotus","scheherazade","Cedarville Cursive", cursive;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 .Welcome-text {
   background: linear-gradient(
@@ -71,7 +93,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 
 

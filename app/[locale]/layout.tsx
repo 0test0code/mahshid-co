@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description: "نخ کوه شایسته دلار عمان طلا بورس اخبار اقتصادstring yarn knit knitting wool thread Mount Mountain Mountaineer mountaineering mountainous area. Outdoor activity mountainous region Spindle spinning wheel lathe spindle woolen reel pulley spool thread",
 };
 
+
 interface RootLayoutProps {
   children:React.ReactNode;
   params: {

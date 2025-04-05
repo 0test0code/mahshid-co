@@ -1,43 +1,42 @@
 
-import jwt, { JwtPayload } from "jsonwebtoken";
+
+
 import { connectDB } from "../config/db";
 import User from "../models/user.model";
-
-import { setCookie } from "@/app/Cookies/setCookie"
 import { cookies } from "next/headers";
 
-export async function GET(request: Request) {   //Connect to Database
-  await connectDB();
+
+export async function GET(request: Request) { 
+   
   // Check for cookies
-  const token = cookies().get("token");
+  //const token = cookies().get("token");
+  
+const tokenObj = cookies().get("token");
+const token= tokenObj?.value;
+ if (token) { 
+     try {                     
+                        //Connect to Database
+                                await connectDB();
+                      const user = await User.findById(token).select("-password"); // remove the password
 
-  if (!token) { console.log("There is no token, you are unauthorised, You may not sign-in, status 401.");
-    return Response.json({ message: "Unauthorised." }, { status: 401 });
-  } else {    try {
-                      const decoded = jwt.verify(token.value, process.env.JWT_SECRET as string);
-
-                      if (!decoded) { console.log("there is an error with Secret key- invalid token")
-                        return Response.json({message:"Unauthorised - invalid token"});
-                      }
-
-                      const userId = (decoded as JwtPayload).userId;
-
-                      const user = await User.findById(userId).select("-password"); // remove the password
-
-                      if (!user) {
+                      if (!user) {    console.log("Error when fetching user, User not found.")
                         return Response.json({ message: "User not found." }, { status: 400 });
                       }
                         
                           
 
-                      return Response.json({ user }, { status: 200 });
+                      return Response.json({ user }, { status: 200 }); 
+                    
                     } catch (error: any) {
                       console.log("Error in fetching user", error);
                       return Response.json({ message: error.message }, { status: 400 });
                     }
+    }                
+  else { console.log("There is no token, you are unauthorised, You may not sign-in, status 401.");
+                      return Response.json({ message: "Unauthorised." }, { status: 401 });
+                    }    
 
-  }
+  
 
   
 }
-export const runtime = 'edge';

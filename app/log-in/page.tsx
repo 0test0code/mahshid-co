@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import toast from "react-hot-toast";
-
+export const runtime = "edge";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -99,4 +99,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-export const runtime = "edge";
+

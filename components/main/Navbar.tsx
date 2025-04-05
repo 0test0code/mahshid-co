@@ -6,6 +6,7 @@ import { Socials } from "@/constants";
 import Credentials from "@/app/helpers/credentials";
 import Image from "next/image";
 import NavItems from "../sub/NavItems";
+import Link from "next/link";
 
 const Navbar = () => {const t = useTranslations('Navbar');
 
@@ -13,12 +14,12 @@ const Navbar = () => {const t = useTranslations('Navbar');
   return (
 <aside className="h-2/3 items-center">
     <nav className="relative flex flex-col border-r shadow-sm  shadow-[#2A0E61]/50">
-        <div className="w-full sm:max-md:max-w-7xl h-[65px] absolute top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10  mt-6">
-                    <div id="scroller" className="p-1 float-right mb-11 py-2">
+        <div className="w-full sm:max-md:max-w-7xl h-[65px] absolute top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
+                    <div id="scroller" className="p-1 float-right mb-8 py-2">
                               <LocalSwitch/>
                     </div > 
-              <div className="p-4 pb-2  items-center mx-auto">
-                      <a
+              <div className="items-center mx-auto">
+                      <Link
                                                         href="#about-me"
                                                         className="flex-shrink-0 space-x-4 md:inline-block"
                                                       >
@@ -32,7 +33,7 @@ const Navbar = () => {const t = useTranslations('Navbar');
                                                             <span className=" ml-[1px]  text-gray-300 shadow-lg Mountlogo text-base font-extrabold">
                                                           {t('Mahshid')}
                                                         </span>
-                      </a>
+                      </Link>
                    
               </div>
               <div className="flex mx-auto justify-center items-center">

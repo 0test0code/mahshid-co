@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import toast from "react-hot-toast";
-
+export const runtime = "edge";
 const SignUpPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -114,4 +114,4 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-export const runtime = "edge";
+

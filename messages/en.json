@@ -1,9 +1,6 @@
 
   {
-    "LocalSwitcher":{"ToggleLanguage":"Change language",
-    "English":"English",
-    "Persian":"Persian"
-    },
+   
 
     "Home": {
       "title": "Hello world!"
@@ -15,15 +12,19 @@
   "App": {
     "title": "Main"
   },
+  "LocalSwitcher":{"ToggleLanguage":"Change language",
+  "English":"English",
+  "Persian":"Persian"
+  },
   "Layout":{
-    "title":"Mahshid co."
+    "title":"Mahshid co"
   },
 
   "AppNavigation": {
     "home": "Start",
     "profile": "Profile"
   },
-  "Navbar":{"Mahshid":"Mahshid Co.",
+  "Navbar":{"Mahshid":"Mahshid Co",
     "cooperation":"Cooperation",
     "game":"Games>",
     "events":"Events",
@@ -74,7 +75,7 @@
   },
   "Projects":{
     "ourProjects":"Our Projects",
-    "ModernNextPortfolio":"Modern Next.js Assistant-Consultant",
+    "ModernNextPortfolio":"Modern NextJs Assistant-Consultant",
     "Des4Modern":"With safe database and efficient census, survey and statistical analysis",
     "InteractiveWebsiteCards":"Interactive Website Cards",
     "Des4Interactive":"Decision-making and analysis with the help of artificial intelligence",

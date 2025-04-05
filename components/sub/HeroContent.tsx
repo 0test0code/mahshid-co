@@ -1,5 +1,6 @@
 "use client";
-
+import localFont from "next/font/local";
+import '@/app/globals.css';
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
@@ -10,13 +11,22 @@ import {
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
+
+const geistMono = localFont({
+  src: "../../app/fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
+type localeProps = {
+  locale: string
+}
 const HeroContent = ( ) => { const t = useTranslations('HeroContent');
   
-  return (
+    return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className={`flex flex-row items-center justify-center px-20 mt-52 w-full z-[20] mr-2 {t('font')}`}
+      className={`flex flex-row items-center justify-center px-20 mt-52 w-full z-[20] mr-2 {t('font') === "geistMono" ? ${geistMono.variable} : ""}`}
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div

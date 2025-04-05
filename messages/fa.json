@@ -1,18 +1,16 @@
 
 
 {
-"LocalSwitcher":{"ToggleLanguage":"تغییر زبان",
-    "English":"English",
-    "Persian":"پارسی"
-    },
-
-
     "Home": {
       "title": "درود بر جهان!"
     }
  ,
     "About": {
       "title": "درباره ما"
+    },
+    "LocalSwitcher":{"ToggleLanguage":"تغییر زبان",
+    "English":"English",
+    "Persian":"پارسی"
     },
     "App": {
       "title": "صقحه اصلی"
@@ -50,7 +48,7 @@
       "Providing": "با ",
       "best":"به روزترین",
       "project":"ابزارها دیده شوید",
-      "font":"font-blotus",
+      "font":"geistMono",
       "Learn":"بیشتر بدانید"
     },
     "skillText":{"generation":"آسودگی بیشتر در کسب و کار با ابزارهای آنلاین", "font":"font-blotus"}

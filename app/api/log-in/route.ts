@@ -2,13 +2,11 @@ import bcryptjs from "bcryptjs";
 import User from "../models/user.model";
 import { setCookie } from "@/app/Cookies/setCookie";
 import { connectDB } from "../config/db";
-import { cookies } from "next/headers";
+// export const runtime = 'edge';
 
 export async function POST(request: Request) {
   await connectDB();
-  const body = await request.json();
-
-  const { email, password } = body;
+  const { email, password } = await request.json();
 
   try {
     const user = await User.findOne({ email });
@@ -28,7 +26,7 @@ export async function POST(request: Request) {
       );
     }
      //Set the cookie
-    await setCookie(user._id);
+    setCookie(user._id);
    
     return Response.json(
       {
@@ -42,4 +40,3 @@ export async function POST(request: Request) {
     return Response.json({ message: error.message }, { status: 400 });
   }
 }
-export const runtime = 'edge';
