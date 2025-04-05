@@ -15,4 +15,4 @@ export async function POST(request: Request) {
     return Response.json({ message: "Error logging out" }, { status: 400 });
   }
 }
-export const runtime = 'edge';
+//export const runtime = 'edge';
