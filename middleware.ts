@@ -6,7 +6,7 @@ import { cookies } from 'next/headers';
 const authRoutes = ["/log-in"];
 const handleI18nRouting = createMiddleware(routing);
 const PROTECTED_ROUTES = ["/menu-games", "/menu-games/:path*"];
-
+export const runtime = "edge";
 export default function middleware (request : NextRequest){ const currentUser = request.cookies.get("currentUser")?.value;
    // Check for cookie
   const memo = cookies().get("token");
@@ -24,7 +24,9 @@ export default function middleware (request : NextRequest){ const currentUser = 
  
 export const config = {unstable_allowDynamic: [
   // allows a single file
-  '/api/**',
+  '/api/fetch-user/route.ts',
+  '/api/log-in/route.ts',
+  '/api/sign-up/route.ts',
   // use a glob to allow anything in the function-bind 3rd party module
   //'**/node_modules/function-bind/**'
   
