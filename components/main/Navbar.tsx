@@ -7,7 +7,7 @@ import Credentials from "@/app/helpers/credentials";
 import Image from "next/image";
 import NavItems from "../sub/NavItems";
 import Link from "next/link";
-
+export const runtime = "edge";
 const Navbar = () => {const t = useTranslations('Navbar');
 
 
