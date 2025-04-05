@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { connectDB } from "../config/db";
-
+export const runtime = "edge";
 export async function POST(request: Request) {
   await connectDB();
   try {

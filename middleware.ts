@@ -6,7 +6,7 @@ import { cookies } from 'next/headers';
 const authRoutes = ["/log-in"];
 const handleI18nRouting = createMiddleware(routing);
 const PROTECTED_ROUTES = ["/menu-games", "/menu-games/:path*"];
-export const runtime = "edge";
+export const runtime = "experimental-edge";
 export default function middleware (request : NextRequest){ const currentUser = request.cookies.get("currentUser")?.value;
    // Check for cookie
   const memo = cookies().get("token");
