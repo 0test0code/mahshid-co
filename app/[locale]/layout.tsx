@@ -13,7 +13,7 @@ import Footer from "@/components/main/Footer";
 
 
 // const inter = Inter({ subsets: ["latin"] });
-export const runtime = process.env.NEXT_PUBLIC_RUNTIME || 'edge';
+export const runtime ='edge';
 export const metadata: Metadata = {
   title: "Mahshid group",
   description: "نخ کوه شایسته دلار عمان طلا بورس اخبار اقتصادstring yarn knit knitting wool thread Mount Mountain Mountaineer mountaineering mountainous area. Outdoor activity mountainous region Spindle spinning wheel lathe spindle woolen reel pulley spool thread",
