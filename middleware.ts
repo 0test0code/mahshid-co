@@ -22,7 +22,13 @@ export default function middleware (request : NextRequest){ const currentUser = 
  
 
  
-export const config = {
+export const config = {unstable_allowDynamic: [
+  // allows a single file
+  '/api/**',
+  // use a glob to allow anything in the function-bind 3rd party module
+  //'**/node_modules/function-bind/**'
+  
+],
   // Match only internationalized pathnames
   matcher: ['/', '/(fa|en)']
 };

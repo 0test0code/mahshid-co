@@ -28,11 +28,11 @@ const token= tokenObj?.value;
                       return Response.json({ user }, { status: 200 }); 
                     
                     } catch (error: any) {
-                      console.log("Error in fetching user", error);
+                      //console.log("Error in fetching user", error);
                       return Response.json({ message: error.message }, { status: 400 });
                     }
     }                
-  else { console.log("There is no token, you are unauthorised, You may not sign-in, status 401.");
+  else { //console.log("There is no token, you are unauthorised, You may not sign-in, status 401.");
                       return Response.json({ message: "Unauthorised." }, { status: 401 });
                     }    
 
