@@ -5,7 +5,7 @@ import { connectDB } from "../config/db";
 import User from "../models/user.model";
 import { cookies } from "next/headers";
 
-
+export const runtime = "edge";
 export async function GET(request: Request) { 
    
   // Check for cookies

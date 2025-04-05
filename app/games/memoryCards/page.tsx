@@ -1,5 +1,5 @@
 import MemoryGame from "./components/MemoryGame";
-
+export const runtime = "edge";
 const MemoryCards = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -9,5 +9,5 @@ const MemoryCards = () => {
 }
 
 export default MemoryCards
-export const runtime = "edge";
+
 

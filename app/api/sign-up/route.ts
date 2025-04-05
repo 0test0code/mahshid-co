@@ -5,7 +5,7 @@ import bcryptjs from "bcryptjs";
 import validateEmail from "@/app/helpers/validateEmail";
 import validatePassword from "@/app/helpers/validatePassword";
 import { setCookie } from "@/app/Cookies/setCookie";
-
+export const runtime = "edge";
 export async function POST(request: Request) { 
   // connect to database
   await connectDB();
