@@ -200,4 +200,4 @@ export default function TicTacToe() {
    </div>
   );
 }
-export const runtime = "edge";
+
