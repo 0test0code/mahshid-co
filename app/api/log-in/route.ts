@@ -2,7 +2,7 @@ import bcryptjs from "bcryptjs";
 import User from "@/app/api/models/user.model";
 import { setCookie } from "@/app/Cookies/setCookie";
 import { connectDB } from "../config/db";
- //export const runtime = 'edge';
+export const runtime = process.env.NEXT_PUBLIC_RUNTIME || 'edge';
 
 export async function POST(request: Request) {
   await connectDB();

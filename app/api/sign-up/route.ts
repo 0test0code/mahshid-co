@@ -5,22 +5,23 @@ import bcryptjs from "bcryptjs";
 import validateEmail from "@/app/helpers/validateEmail";
 import validatePassword from "@/app/helpers/validatePassword";
 import { setCookie } from "@/app/Cookies/setCookie";
-//export const runtime = "edge";
-export async function POST(request: Request) { 
+export const runtime = process.env.NEXT_PUBLIC_RUNTIME || 'edge';
+export async function POST(request: Request) {
   // connect to database
   await connectDB();
 
   const body = await request.json();
   const { username, email, password } = body;
   //Validate the data
-  if (!validateEmail(email) || !validatePassword(password)){
-    return Response.json({ error : "Invalid email or password!"} , {status : 400});
+  if (!validateEmail(email) || !validatePassword(password)) {
+    return Response.json({ error: "Invalid email or password!" }, { status: 400 });
   }
 
   try {
-    if (!email || !password || !username) { Response.json({message : "All fields are required."} );
+    if (!email || !password || !username) {
+      Response.json({ message: "All fields are required." });
       throw new Error("All fields are required.");
-                                          }
+    }
     const userEmailExists = await User.findOne({ email });
 
     if (userEmailExists) {
@@ -31,14 +32,14 @@ export async function POST(request: Request) {
     }
 
     const hashedPassword = await bcryptjs.hash(password, 10);
-// Create a user
+    // Create a user
 
     const user = await User.create({
       username,
       email,
       password: hashedPassword,
     }); // Set Cookies 
-          setCookie(user._id);
+    setCookie(user._id);
 
     return Response.json(
       {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import toast from "react-hot-toast";
-export const runtime = "edge";
+export const runtime = process.env.NEXT_PUBLIC_RUNTIME || 'edge';
 const SignUpPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -30,15 +30,15 @@ const SignUpPage = () => {
       );
 
       setIsLoading(false);
-      toast.success(response.data.message,{duration:2000, position:"top-center", icon:"😍"});
-            setTimeout(() => {
+      toast.success(response.data.message, { duration: 2000, position: "top-center", icon: "😍" });
+      setTimeout(() => {
         router.push("/log-in");
-    }, 2000);
+      }, 2000);
     } catch (error: any) {
       setIsLoading(false);
       setError(error);
       console.log("Error in sign up: ", error.message);
-      toast.error("Password must be at least 8 characters!",{duration:3000, position:"top-center", icon:"😵"});
+      toast.error("Password must be at least 8 characters!", { duration: 3000, position: "top-center", icon: "😵" });
     }
   };
 
