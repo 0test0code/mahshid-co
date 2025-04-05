@@ -1,5 +1,5 @@
-import { connectDB } from "../config/db";
-import User from "../models/user.model";
+import { connectDB } from "@/app/api/config/db";
+import User from "@/app/api/models/user.model";
 import bcryptjs from "bcryptjs";
 
 import validateEmail from "@/app/helpers/validateEmail";

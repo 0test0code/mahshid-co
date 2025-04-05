@@ -1,5 +1,5 @@
 import bcryptjs from "bcryptjs";
-import User from "../models/user.model";
+import User from "@/app/api/models/user.model";
 import { setCookie } from "@/app/Cookies/setCookie";
 import { connectDB } from "../config/db";
  export const runtime = 'edge';
