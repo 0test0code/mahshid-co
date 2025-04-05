@@ -2,7 +2,7 @@ import bcryptjs from "bcryptjs";
 import User from "@/app/api/models/user.model";
 import { setCookie } from "@/app/Cookies/setCookie";
 import { connectDB } from "../config/db";
-export const runtime = process.env.NEXT_PUBLIC_RUNTIME || 'edge';
+export const runtime = process.env.NEXT_PUBLIC_RUNTIME || "experimental-edge" || "edge" || undefined;
 
 export async function POST(request: Request) {
   await connectDB();
@@ -25,9 +25,9 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-     //Set the cookie
+    //Set the cookie
     setCookie(user._id);
-   
+
     return Response.json(
       {
         message: "Logged in successfully.",

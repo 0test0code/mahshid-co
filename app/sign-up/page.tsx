@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import toast from "react-hot-toast";
-export const runtime = process.env.NEXT_PUBLIC_RUNTIME || 'edge';
+export const runtime = process.env.NEXT_PUBLIC_RUNTIME || "experimental-edge" || "edge" || undefined;
 const SignUpPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
