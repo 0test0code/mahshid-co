@@ -27,6 +27,6 @@ export default async function RootLayout({
       params: {locale: string};
     } */
 ) {
-    return { children };
+    return  children ;
 
 }
