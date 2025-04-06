@@ -28,7 +28,7 @@ export const config = {unstable_allowDynamic: [
   '/api/log-in/route.ts',
   '/api/sign-up/route.ts',
   // use a glob to allow anything in the function-bind 3rd party module
-  //'**/node_modules/function-bind/**'
+  '/node_modules/function-bind/**'
   
 ],
   // Match only internationalized pathnames

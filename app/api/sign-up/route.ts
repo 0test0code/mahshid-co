@@ -1,11 +1,11 @@
 import { connectDB } from "@/app/api/config/db";
 import User from "@/app/api/models/user.model";
-import bcryptjs from "bcryptjs";
+import { hashSync } from 'bcrypt-edge';
 
 import validateEmail from "@/app/helpers/validateEmail";
 import validatePassword from "@/app/helpers/validatePassword";
 import { setCookie } from "@/app/Cookies/setCookie";
-export const runtime = process.env.NEXT_PUBLIC_RUNTIME || "experimental-edge" || "edge" || undefined;
+export const runtime = "experimental-edge";
 export async function POST(request: Request) {
   // connect to database
   await connectDB();
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const hashedPassword = await bcryptjs.hash(password, 10);
+    const hashedPassword = hashSync(password, 10);
     // Create a user
 
     const user = await User.create({

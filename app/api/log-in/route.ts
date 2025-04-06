@@ -1,8 +1,8 @@
-import bcryptjs from "bcryptjs";
+import {  compareSync} from 'bcrypt-edge';
 import User from "@/app/api/models/user.model";
 import { setCookie } from "@/app/Cookies/setCookie";
 import { connectDB } from "../config/db";
-export const runtime = process.env.NEXT_PUBLIC_RUNTIME || "experimental-edge" || "edge" || undefined;
+export const runtime = "experimental-edge";
 
 export async function POST(request: Request) {
   await connectDB();
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const isPasswordValid = await bcryptjs.compare(password, user.password);
+    const isPasswordValid = compareSync(password, user.password);
 
     if (!isPasswordValid) {
       return Response.json(
